@@ -133,3 +133,6 @@ dmypy.json
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Kubernetes config
+secret.yaml
