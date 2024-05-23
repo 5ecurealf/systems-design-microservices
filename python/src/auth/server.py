@@ -12,7 +12,12 @@ server.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD")
 server.config["MYSQL_DB"] = os.environ.get("MYSQL_DB")
 server.config["MYSQL_PORT"] = os.environ.get("MYSQL_PORT")
 
-
+"""
+Extracts and verifies the authorization credentials from the request.
+Queries the database for the user's email and password.
+Validates the provided credentials against the database.
+Returns a JWT if the credentials are valid, otherwise returns an error message with a 401 status code.
+"""
 @server.route("/login",methods=["POST"])
 def login():
     auth = request.authorization
